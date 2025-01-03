@@ -1,0 +1,20 @@
+# 짝수자리 개수
+
+j=10
+cnt = 0
+digit_cnt = 1
+
+nums = list(map(int, input().split(',')))
+
+for i in range(len(nums)):
+    while nums[i] / j != 0:
+        digit_cnt += 1
+        j *= 10
+    if digit_cnt % 2 == 0:
+        cnt += 1
+    j=10
+    digit_cnt = 0
+
+print(cnt)
+
+# 오류 다시 확인하고 사실 len쓰면 됨, 함수 적재적소에 쓸 수 있도록 다시 확인
